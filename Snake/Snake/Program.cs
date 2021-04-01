@@ -39,25 +39,19 @@ namespace Snake
                 }
                 else
                 {
+                    if (Console.KeyAvailable)
+                    {
+                        ConsoleKeyInfo key = Console.ReadKey();
+                        snake.HandleKey(key.Key);
+                    }
+                    Thread.Sleep(150);
                     snake.Move();
                 }
 
-                Thread.Sleep(100);
-
-                if (Console.KeyAvailable)
-                {
-                    ConsoleKeyInfo key = Console.ReadKey();
-                    snake.HandleKey(key.Key);
-                }
-                Thread.Sleep(100);
-                snake.Move();
+               
                 
             }
             
-
-
-
-            Console.ReadLine();
 
         }
 
